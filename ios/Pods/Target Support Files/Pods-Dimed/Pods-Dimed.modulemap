@@ -1,0 +1,6 @@
+module Pods_Dimed {
+  umbrella header "Pods-Dimed-umbrella.h"
+
+  export *
+  module * { export * }
+}

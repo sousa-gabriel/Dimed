@@ -1,0 +1,6 @@
+module Pods_Dimed_DimedTests {
+  umbrella header "Pods-Dimed-DimedTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
