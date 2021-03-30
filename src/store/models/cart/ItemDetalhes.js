@@ -1,18 +1,19 @@
-//Redux feito pra inserir os dados vindos da api
+//Redux feito pra buscar o detalhe do Item
 import {createAction, handleActions} from 'redux-actions';
 
 /*---------------------types and Action creators---------------------*/
-export const addDateApi = createAction('ADD_PRODUCT_TO_API');
+export const itemDetail = createAction('RETURN_DETALHES_ITEM');
 
 /*---------------------Initial state---------------------------------*/
-const INITIAL_STATE = {items: []};
+const INITIAL_STATE = {item: {}, quantity: 0};
 
 /*---------------------Initial state---------------------------------*/
 const reducer = handleActions(
   {
-    [addDateApi]: (state, {payload}) => ({
+    [itemDetail]: (state, {payload}) => ({
       ...state,
-      items: payload,
+      item: payload.item,
+      quantity: payload.quantity,
     }),
   },
   INITIAL_STATE,

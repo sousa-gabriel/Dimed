@@ -1,9 +1,11 @@
 //usando a função conbiner reducer para unir varios reduders em apenas um
 import {combineReducers} from 'redux';
-// import Item from './cart/reducer';
-import handleActions from './cart/AddDateApi';
+import addDateApi from './cart/AddDateApi';
+import itemDetail from './cart/ItemDetalhes';
+import addItemToCart from './cart/AddItemToCart';
 
 export default combineReducers({
-    // Item,
-    handleActions,
-})
+  itemDetail,
+  addDateApi,
+  addItemToCart,
+});

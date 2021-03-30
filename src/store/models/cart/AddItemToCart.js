@@ -1,18 +1,21 @@
-//Redux feito pra inserir os dados vindos da api
+//Redux feito pra adicionar um item no carrinho
 import {createAction, handleActions} from 'redux-actions';
-
 /*---------------------types and Action creators---------------------*/
-export const addDateApi = createAction('ADD_PRODUCT_TO_API');
+export const addItemToCart = createAction('ADD_ITEM_CARRINHO');
 
 /*---------------------Initial state---------------------------------*/
-const INITIAL_STATE = {items: []};
+const INITIAL_STATE = {
+  item: {},
+  quantity: 0,
+};
 
 /*---------------------Initial state---------------------------------*/
 const reducer = handleActions(
   {
-    [addDateApi]: (state, {payload}) => ({
+    [addItemToCart]: (state, {payload}) => ({
       ...state,
-      items: payload,
+      item: payload.item,
+      quantity: payload.quantity + 1,
     }),
   },
   INITIAL_STATE,

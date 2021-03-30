@@ -3,9 +3,8 @@ import Item from '../../Components/Item';
 import api from '../../services/api';
 import {ICarItem} from '../../store/models/cart/types';
 import {useDispatch, useSelector} from 'react-redux';
-import {addDateApi1} from '../../store/models/cart/AddDateApi';
+import {addDateApi} from '../../store/models/cart/AddDateApi';
 import {Container, CampoDeBusca, ListaDeItens, Header} from './styles';
-import {IState} from '../../store';
 
 const ListaItem: React.FC = () => {
   const [text, setText] = useState('');
@@ -15,13 +14,12 @@ const ListaItem: React.FC = () => {
   //insere dados da Api no Redux
   useEffect(() => {
     api.get('items').then(response => {
-      dispatch(addDateApi1(response.data.payload));
+      dispatch(addDateApi(response.data.payload));
     });
   }, [dispatch]);
 
   //busco os dados do meu redux
-  const card = useSelector<IState, ICarItem[]>(state => state.handleActions.items);
-
+  const card = useSelector( state => state.addDateApi.items);
   function Busca(text: string) {
     const filtrarLista = card.filter((item: any) => {
       const itemFilter = item.name || item.ean.toString() ? item.name.toUpperCase() || item.ean.toUpperCase() : ''.toUpperCase();
@@ -35,11 +33,11 @@ const ListaItem: React.FC = () => {
       return (
         itemFilter.indexOf(newText) > -1 ||
         EanitemFilter.indexOf(newText) > -1 ||
-        CodigoFilter.indexOf(newText) > - 1
+        CodigoFilter.indexOf(newText) > -1
       );
     });
-    setList(filtrarLista)
-    setText(text)
+    setList(filtrarLista);
+    setText(text);
   }
 
   return (
@@ -53,7 +51,7 @@ const ListaItem: React.FC = () => {
       />
       <ListaDeItens
         data={list == '' ? card : list}
-        renderItem={({ item }) => (
+        renderItem={({item}) => (
           <Item
             key={item.id}
             Selecionado={item.id}
@@ -65,7 +63,7 @@ const ListaItem: React.FC = () => {
         )}
       />
     </Container>
-  )
-}
+  );
+};
 
 export default ListaItem;
