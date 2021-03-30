@@ -9,11 +9,11 @@ const INITIAL_STATE = {
 };
 
 const Item : Reducer = (state = INITIAL_STATE, action) => {
-    
+
     return produce(state, draft =>{
         switch(action.type){
             case 'ADD_PRODUCT_TO_API':{
-                const {product} = action.payload; 
+                const {product} = action.payload;
                     draft.items=product
                 break;
             }
@@ -58,7 +58,7 @@ const Item : Reducer = (state = INITIAL_STATE, action) => {
                     var soma=0;
                     for (let i=0; i < Total.itemDetalhes.length;i++){
                       soma += Total.itemDetalhes[i].quantity
-                    }    
+                    }
                     draft.total=soma
                 break;
             }

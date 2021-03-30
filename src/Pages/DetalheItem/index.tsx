@@ -2,8 +2,8 @@ import { useNavigation } from '@react-navigation/native';
 import React, { useCallback, useEffect } from 'react';
 import { Image, Text, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
-import { IState } from '../store';
-import { IItem, IItemDetalhes } from '../store/models/cart/types';
+import { IState } from '../../store';
+import { IItem, IItemDetalhes } from '../../store/models/cart/types';
 import {
   Container, 
   Header,
@@ -29,9 +29,9 @@ import {
   ContainerDesconto,
 } from './styles';
 
-import CartIcon from '../Icons/Cart.png';
-import VoltarIcon from '../Icons/Voltar.png';
-import { addCarrinho, removeCarrinho, totalCarrinho } from '../store/models/cart/actions';
+import CartIcon from '../../Icons/Cart.png';
+import VoltarIcon from '../../Icons/Voltar.png';
+import { addCarrinho, removeCarrinho, totalCarrinho } from '../../store/models/cart/actions';
 
 interface CatalogItemProps{
   itemDetalhes: IItem;

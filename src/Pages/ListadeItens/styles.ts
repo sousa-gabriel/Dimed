@@ -16,7 +16,7 @@ export const Header = styled.View`
 export const CampoDeBusca = styled.TextInput`
     width: 90%;
     height: 50px;
-    border-width: 1;
+    border-width: 1px;
     border-color: #BEC7D0;
     margin-bottom: 40px;
 `;

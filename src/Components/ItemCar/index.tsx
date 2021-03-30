@@ -6,16 +6,14 @@ import {
     ContainerDetalhesItem,
     NomeItem,
     ContainerValor,
-    ValorInicial,
-    ValorFinal,
 } from './styles';
 
 interface DadosItem {
   Selecionado: number;
   name: string;
   imagem: string;
-  precoOriginal: string;
-  precoAtual:string;
+  precoOriginal: number;
+  precoAtual:number;
   quantidade: number;
 }
 

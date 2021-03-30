@@ -2,12 +2,12 @@ import React from 'react';
 import { Image } from 'react-native';
 import { useSelector } from 'react-redux';
 import { Voltar } from '../DetalheItem/styles';
-import { IState } from '../store';
-import { IItemDetalhes } from '../store/models/cart/types';
+import { IState } from '../../store';
+import { IItemDetalhes } from '../../store/models/cart/types';
 import { Container, ListaDeItens,Header,ValorTotal,Title,ContainerTitulo } from './styles';
 import { useNavigation } from '@react-navigation/native';
-import VoltarIcon from '../Icons/Voltar.png';
-import ItemCar from '../Components/ItemCar';
+import VoltarIcon from '../../Icons/Voltar.png';
+import ItemCar from '../../Components/ItemCar';
 
 
 const Carrinho: React.FC= () =>{

@@ -15,8 +15,8 @@ export const Cart = styled.TouchableOpacity`
     width: 50px; 
     height: 50px; 
     position: absolute;
-    right:10;
-    top: 40;
+    right:10px;
+    top: 40px;
     justify-content: center;
     align-items: center;
 `;
@@ -24,8 +24,8 @@ export const Voltar = styled.TouchableOpacity`
     width: 50px; 
     height: 50px; 
     position: absolute;
-    left:10;
-    top: 40;
+    left:10px;
+    top: 40px;
     justify-content: center;
     align-items: center;
 `;
@@ -63,11 +63,11 @@ export const Title = styled.Text`
     margin-top:30px;
 `;
 export const ContainerDescricao = styled.ScrollView`
-    height: 20%;
+    height: 100px;
+
     width: 95%;
-    border-width: 1;
+    border-width: 1px;
     border-color: #BEC7D0;
-    padding: 10px;
 
 `;
 export const TextoDescricao = styled.Text`
